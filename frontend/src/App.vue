@@ -1,19 +1,25 @@
 <template>
-  <div id="app">
-    <UpLoad />
-  </div>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h2>作业提交</h2>
+  <div id="app">
+    <h3>提交zip</h3>
+    <UpLoad file-type="zip"></UpLoad>
+    <h3>提交pdf</h3>
+    <UpLoad file-type="pdf"></UpLoad>
+    <h3>提交mp4</h3>
+    <UpLoad file-type="mp4"></UpLoad>
+    <h3>提交txt</h3>
+    <UpLoad file-type="txt"></UpLoad>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import UpLoad from "@/components/UpLoad";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+
     UpLoad
   }
 }
