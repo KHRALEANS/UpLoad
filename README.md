@@ -4,13 +4,11 @@
 ```
 mysql> create database up_load;
 ```
-## 注释掉backend/__init__.py中的以下行：
-```angular2html
-inject.configure(config_ioc)
-```
+
 ## 工作目录cd至upload并输入：
 ```angular2html
 $ python
+>>> import backend.models
 >>> import db
 >>> db.init_db()
 ```
