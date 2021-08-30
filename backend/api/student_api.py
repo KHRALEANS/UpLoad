@@ -15,3 +15,22 @@ def create_student():
     student_service.add(student)
 
     return jsonify(student.to_json())
+
+
+@bp.route('/students', methods=['GET'])
+def list_students():
+    student_list = student_service.getAll()
+
+    result = {
+        'students': [item.to_json() for item in student_list]
+    }
+
+    return jsonify(result)
+
+
+@bp.route('/students/<id>', methods=['GET'])
+def get_student_by_id(id):
+    student = student_service.getById(id)
+
+    result = student.to_json()
+    return jsonify(result)

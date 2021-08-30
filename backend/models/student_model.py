@@ -11,6 +11,8 @@ class Student(Base):
     student_name = Column(String(150))
     student_number = Column(Integer, unique=True)
 
+    homeworks = relationship("Homework", order_by='Homework.id', back_populates="student")
+
     def __repr__(self):
         return f"<Student(id={self.id}, student_name={self.student_name}, student_number={self.student_number})>"
 
